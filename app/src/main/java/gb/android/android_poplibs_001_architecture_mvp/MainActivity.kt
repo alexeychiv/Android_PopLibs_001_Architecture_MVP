@@ -25,16 +25,15 @@ class MainActivity : AppCompatActivity(), MainView {
 
     private fun initButtonListeners() {
         binding.btnCounter1.setOnClickListener {
-            presenter.counterClick(0)
+            presenter.onCounter1Clicked()
         }
         binding.btnCounter2.setOnClickListener {
-            presenter.counterClick(1)
+            presenter.onCounter2Clicked()
         }
         binding.btnCounter3.setOnClickListener {
-            presenter.counterClick(2)
+            presenter.onCounter3Clicked()
         }
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

@@ -7,12 +7,16 @@ class MainPresenter(
 
     private val model = CountersModel()
 
-    fun counterClick(index: Int) {
-        when (index) {
-            0 -> view.setButton1Text(model.inc(0).toString())
-            1 -> view.setButton2Text(model.inc(1).toString())
-            2 -> view.setButton3Text(model.inc(2).toString())
-        }
+    fun onCounter1Clicked() {
+        view.setButton1Text(model.inc1().toString())
+    }
+
+    fun onCounter2Clicked() {
+        view.setButton2Text(model.inc2().toString())
+    }
+
+    fun onCounter3Clicked() {
+        view.setButton3Text(model.inc3().toString())
     }
 
 }
