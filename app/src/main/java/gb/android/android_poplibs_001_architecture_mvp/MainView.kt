@@ -1,9 +1,14 @@
 package gb.android.android_poplibs_001_architecture_mvp
 
+import moxy.MvpView
+import moxy.viewstate.strategy.alias.AddToEndSingle
 
-interface MainView {
-    fun setButton1Text(text: String)
-    fun setButton2Text(text: String)
-    fun setButton3Text(text: String)
+//@AddToEndSingle
+interface MainView : MvpView {
+
+    @AddToEndSingle fun setButton1Text(text: String)
+    @AddToEndSingle fun setButton2Text(text: String)
+    @AddToEndSingle fun setButton3Text(text: String)
+
 }
 

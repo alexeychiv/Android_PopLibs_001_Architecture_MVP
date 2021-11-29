@@ -1,17 +1,31 @@
 package gb.android.android_poplibs_001_architecture_mvp
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import gb.android.android_poplibs_001_architecture_mvp.databinding.ActivityMainBinding
+import moxy.MvpAppCompatActivity
+import moxy.ktx.moxyPresenter
+import moxy.presenter.InjectPresenter
+import moxy.presenter.ProvidePresenter
 
-class MainActivity : AppCompatActivity(), MainView {
+
+class MainActivity : MvpAppCompatActivity(), MainView {
 
     private var _binding: ActivityMainBinding? = null
     private val binding: ActivityMainBinding
         get() = _binding!!
 
 
-    val presenter = MainPresenter(this)
+    //private val presenter = MainPresenter()
+
+    //@InjectPresenter
+    //lateinit var presenter: MainPresenter
+    //
+    //@ProvidePresenter
+    //fun providePresenter(): MainPresenter {
+    //  return MainPresenter(CountersModel())
+    //}
+    //same as above
+    private val presenter by moxyPresenter { MainPresenter(CountersModel()) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
